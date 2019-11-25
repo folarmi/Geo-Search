@@ -71,7 +71,7 @@ function initMap() {
       document.getElementById('showWeather').addEventListener('click', getWeather);
 
       function getWeather () {
-          var api = ' https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=78c41b3ef7b008eb035fd1e2cfa87696';
+          var api = ' https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=78c41b3ef7b008eb035fd1e2cfa87696';
 
           fetch(api)
          .then((res) => res.json())
@@ -128,4 +128,4 @@ function convertToFarenheit () {
       var fahrenheitTemperature = Math.round(((parseFloat(fahrenheitTemp)-273.15)*1.8)+32);
       document.getElementById('farenheitContent').innerHTML = fahrenheitTemperature + '&deg' + 'F';
   }
- develop
+ 
