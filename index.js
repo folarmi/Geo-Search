@@ -66,31 +66,29 @@ function initMap() {
         var latitude =  place.geometry.location.lat();
         var longitude = place.geometry.location.lng();
 
-        document.getElementById('lat').innerHTML = latitude;
-        document.getElementById('lng').innerHTML = longitude;
-  
-        //Get Weather
-        document.getElementById('showWeather').addEventListener('click', getWeather);
-  
-        function getWeather () {
-            var api = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=78c41b3ef7b008eb035fd1e2cfa87696';
-  
-            fetch(api)
-           .then((res) => res.json())
-           .then((data) => {
-              
-              var windSpeed = data.wind.speed;
-              var Temperature = data.main.temp; 
-              var weather = data.weather[0].description;
-              var humidity = data.main.humidity;
-  
-              //Posts to the DOM
-              document.getElementById('wind').innerHTML = windSpeed;
-              document.getElementById('temp').innerHTML = Temperature + '&deg';
-              document.getElementById('weather').innerHTML = weather;
-              document.getElementById('humidity').innerHTML = humidity;
-        })
-        }
+        
+      //Get Weather
+      document.getElementById('showWeather').addEventListener('click', getWeather);
+
+      function getWeather () {
+          var api = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=78c41b3ef7b008eb035fd1e2cfa87696';
+
+          fetch(api)
+         .then((res) => res.json())
+         .then((data) => {
+            
+            var windSpeed = data.wind.speed;
+            var Temperature = data.main.temp; 
+            var weather = data.weather[0].description;
+            var humidity = data.main.humidity;
+
+            //Posts to the DOM
+            document.getElementById('wind').innerHTML = windSpeed + "km/hr";
+            document.getElementById('temp').innerHTML = Temperature + '&deg';
+            document.getElementById('weather').innerHTML = weather;
+            document.getElementById('humidity').innerHTML = humidity;
+      })
+      }
     });
   }
   
