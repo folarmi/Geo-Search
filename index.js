@@ -90,7 +90,6 @@ function initMap() {
       })
       }
     });
- ft-temperature-converter-29666918
 }
 
 // Temperature Converters
