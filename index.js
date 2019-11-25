@@ -110,7 +110,7 @@ function convertToFarenheit () {
     document.getElementById('farenheitContent').innerHTML = fahrenheitTemperature + '&deg' + 'F';
 }
 
-  }
+  
   
   // Temperature Converters
   
