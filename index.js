@@ -90,6 +90,26 @@ function initMap() {
       })
       }
     });
+ ft-temperature-converter-29666918
+}
+
+// Temperature Converters
+
+document.getElementById('celsius').addEventListener('click', convertToCelsius);
+document.getElementById('farenheit').addEventListener('click', convertToFarenheit);
+
+function convertToCelsius () {
+    var celsiusTemp = temp.textContent;
+    var celsiusTemperature = Math.round(parseFloat(celsiusTemp) - 273.15);
+    document.getElementById('celsiusContent').innerHTML = celsiusTemperature + '&deg' + 'C';
+}
+
+function convertToFarenheit () {
+    var fahrenheitTemp = temp.textContent;
+    var fahrenheitTemperature = Math.round(((parseFloat(fahrenheitTemp)-273.15)*1.8)+32);
+    document.getElementById('farenheitContent').innerHTML = fahrenheitTemperature + '&deg' + 'F';
+}
+
   }
   
   // Temperature Converters
@@ -108,3 +128,4 @@ function initMap() {
       var fahrenheitTemperature = Math.round(((parseFloat(fahrenheitTemp)-273.15)*1.8)+32);
       document.getElementById('farenheitContent').innerHTML = fahrenheitTemperature + '&deg' + 'F';
   }
+ develop
