@@ -66,33 +66,51 @@ function initMap() {
         var latitude =  place.geometry.location.lat();
         var longitude = place.geometry.location.lng();
 
-        document.getElementById('lat').innerHTML = latitude;
-        document.getElementById('lng').innerHTML = longitude;
-  
-        //Get Weather
-        document.getElementById('showWeather').addEventListener('click', getWeather);
-  
-        function getWeather () {
-            var api = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=78c41b3ef7b008eb035fd1e2cfa87696';
-  
-            fetch(api)
-           .then((res) => res.json())
-           .then((data) => {
-              
-              var windSpeed = data.wind.speed;
-              var Temperature = data.main.temp; 
-              var weather = data.weather[0].description;
-              var humidity = data.main.humidity;
-  
-              //Posts to the DOM
-              document.getElementById('wind').innerHTML = windSpeed;
-              document.getElementById('temp').innerHTML = Temperature + '&deg';
-              document.getElementById('weather').innerHTML = weather;
-              document.getElementById('humidity').innerHTML = humidity;
-        })
-        }
+        
+      //Get Weather
+      document.getElementById('showWeather').addEventListener('click', getWeather);
+
+      function getWeather () {
+          var api = ' https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&APPID=78c41b3ef7b008eb035fd1e2cfa87696';
+
+          fetch(api)
+         .then((res) => res.json())
+         .then((data) => {
+            
+            var windSpeed = data.wind.speed;
+            var Temperature = data.main.temp; 
+            var weather = data.weather[0].description;
+            var humidity = data.main.humidity;
+
+            //Posts to the DOM
+            document.getElementById('wind').innerHTML = windSpeed + "km/hr";
+            document.getElementById('temp').innerHTML = Temperature + '&deg';
+            document.getElementById('weather').innerHTML = weather;
+            document.getElementById('humidity').innerHTML = humidity;
+      })
+      }
     });
-  }
+ ft-temperature-converter-29666918
+}
+
+// Temperature Converters
+
+document.getElementById('celsius').addEventListener('click', convertToCelsius);
+document.getElementById('farenheit').addEventListener('click', convertToFarenheit);
+
+function convertToCelsius () {
+    var celsiusTemp = temp.textContent;
+    var celsiusTemperature = Math.round(parseFloat(celsiusTemp) - 273.15);
+    document.getElementById('celsiusContent').innerHTML = celsiusTemperature + '&deg' + 'C';
+}
+
+function convertToFarenheit () {
+    var fahrenheitTemp = temp.textContent;
+    var fahrenheitTemperature = Math.round(((parseFloat(fahrenheitTemp)-273.15)*1.8)+32);
+    document.getElementById('farenheitContent').innerHTML = fahrenheitTemperature + '&deg' + 'F';
+}
+
+  
   
   // Temperature Converters
   
@@ -110,3 +128,4 @@ function initMap() {
       var fahrenheitTemperature = Math.round(((parseFloat(fahrenheitTemp)-273.15)*1.8)+32);
       document.getElementById('farenheitContent').innerHTML = fahrenheitTemperature + '&deg' + 'F';
   }
+ develop
