@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property = "og:url"  content="https://folarmi.github.io/Geo-Search/">
+    <meta property = "og:type"  content="website">
+    <meta property = "og:title"  content="Geo-Search">
+    <meta property = "description"  content="location and weather website">
+    <meta property = "og:image"  content="https://folarmi.github.io/Geo-Search/">
     <link rel="stylesheet" href="style.css">
     <title>Geo Search</title>
 </head>
@@ -13,10 +18,11 @@
         
         <div class="firstCol">
             <h1>Geo Search </h1>
-
-        <button id="viewStaticMap"> View Static Map</button>    
-
-        <img id="staticMap" src="" />
+            <div id="fb-root"></div>
+            <div class="fb-share-button" 
+            data-href="https://folarmi.github.io/Geo-Search/" 
+            data-layout="button_count">
+          </div>
             <!-- Static Map -->
          <!-- <img src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=425x400&maptype=roadmap
         &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
@@ -49,7 +55,6 @@
             <li> Temp(Celsius): <span id="celsiusContent"></span></li>
             <button id="farenheit"> Farenheit</button>
             <li> Temp(Farenheit) : <span id="farenheitContent"></span></li>
-            <button id="converter"> Convert to Celsius </button>
         </div>
 
     </div>

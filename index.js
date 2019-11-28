@@ -130,31 +130,12 @@ function convertToFarenheit () {
       var fahrenheitTemperature = Math.round(((parseFloat(fahrenheitTemp)-273.15)*1.8)+32);
       document.getElementById('farenheitContent').innerHTML = fahrenheitTemperature + '&deg' + 'F';
   }
- 
-// Get a Static Map
-//     const myIframe = document.getElementById("staticMap");
-//     const mapButton = document.getElementById("viewStaticMap");
- 
-//     mapButton.addEventListener("click", ()=>{
-//         const latitude = lat.textContent;
-//         const longitude = lng.textContent;
-//         myIframe.style.display = "block"
-//         mapButton.src = "https://maps.googleapis.com/maps/api/staticmap?center"+latitude,longitude+"&zoom=13&size=425x400&maptype=roadmap&key=AIzaSyAKrsTZlN-C-eEq1D8nEwtSDnDd9xtknkI";
-//     }) 
 
-
-// const converter = document.getElementById('converter')
-// converter.addEventListener('click', tempConverter);
-// var temperature = temp.textContent; 
-
-// function tempConverter() {
-//    converter.innerHTML = "Convert To Fahrenheit"
-//     var celsiusTemperature = Math.round(parseFloat(temperature) - 273.15);
-//     var fahrenheitTemperature = Math.round(((parseFloat(temperature)-273.15)*1.8)+32);
-//     const tempValue = document.getElementById('temp');
-//    if (tempValue.value === celsiusTemperature) {
-//     tempValue.innerHTML = celsiusTemperature + '&deg' + 'C';;
-//   } else {
-//     tempValue.innerHTML = fahrenheitTemperature + '&deg' + 'F';;
-//   }
-// }
+// Facebook share
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
