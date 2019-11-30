@@ -63,8 +63,8 @@ function initMap() {
             }
         }
         document.getElementById('location').innerHTML = place.formatted_address;
-        var latitude =  place.geometry.location.lat();
-        var longitude = place.geometry.location.lng();
+        var latitude =  place.geometry.location.lat().toFixed(4);
+        var longitude = place.geometry.location.lng().toFixed(4);
 
         document.getElementById('lat').innerHTML = latitude;
         document.getElementById('lng').innerHTML = longitude;
